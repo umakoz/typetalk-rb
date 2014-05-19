@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Typetalk::VERSION
   spec.authors       = ["umakoz"]
   spec.email         = ["umakoz@gmail.com"]
-  spec.summary       = %q{Ruby library to interact with Typetalk}
-  spec.description   = %q{Ruby library to interact with Typetalk}
+  spec.summary       = %q{A Ruby wrapper for Typetalk}
+  spec.description   = %q{A Ruby wrapper for Typetalk}
   spec.homepage      = "https://github.com/umakoz/typetalk"
   spec.license       = "MIT"
 
@@ -20,10 +20,14 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.0.0'
 
+  spec.add_dependency "hashie"
   spec.add_dependency "faraday"
-  spec.add_dependency "faraday_middleware"
+  spec.add_dependency "mime-types"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "webmock"
+  spec.add_development_dependency "vcr"
+  spec.add_development_dependency "awesome_print"
 end

@@ -1,0 +1,161 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://typetalk.in/oauth2/access_token
+    body:
+      encoding: UTF-8
+      string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&grant_type=client_credentials&scope=topic.read%2Ctopic.post%2Cmy
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Typetalk Rubygem 0.0.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 15 May 2014 12:10:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"(ACCESS_TOKEN)","expires_in":3600,"scope":"topic.read,topic.post,my","refresh_token":"(REFRESH_TOKEN)","token_type":"Bearer"}'
+    http_version: 
+  recorded_at: Thu, 15 May 2014 12:10:32 GMT
+- request:
+    method: post
+    uri: https://typetalk.in/api/v1/topics/5148?access_token=(ACCESS_TOKEN)
+    body:
+      encoding: UTF-8
+      string: message=Test+Message+2+-+8
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Typetalk Rubygem 0.0.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 15 May 2014 12:10:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Etag:
+      - W/"fdbf8a82dfcec7450f4bc2659e587142"
+      Strict-Transport-Security:
+      - max-age=2592000
+    body:
+      encoding: UTF-8
+      string: '{"topic":{"name":"Test Topic 2","updatedAt":"2014-05-15T07:49:56Z","description":null,"id":5148,"lastPostedAt":"2014-05-15T12:10:32Z","createdAt":"2014-05-15T07:45:57Z","suggestion":"Test
+        Topic 2"},"post":{"updatedAt":"2014-05-15T12:10:32Z","talks":[],"replyTo":null,"url":"https://typetalk.in/topics/5148/posts/279093","topicId":5148,"likes":[],"links":[],"id":279093,"mention":null,"createdAt":"2014-05-15T12:10:32Z","message":"Test
+        Message 2 - 8","account":{"name":"typetalk-rubygem-tester","updatedAt":"2014-05-15T00:36:03Z","fullName":"Rubygem
+        Tester","id":3865,"createdAt":"2014-05-14T09:09:44Z","suggestion":"Rubygem
+        Tester","imageUrl":"https://typetalk.in/accounts/3865/profile_image.png?t=1400114163838"},"attachments":[]}}'
+    http_version: 
+  recorded_at: Thu, 15 May 2014 12:10:33 GMT
+- request:
+    method: post
+    uri: https://typetalk.in/api/v1/topics/5148/posts/279093/like?access_token=(ACCESS_TOKEN)
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Typetalk Rubygem 0.0.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 15 May 2014 12:10:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Etag:
+      - W/"5405971fb976edcfa23105ad72597f02"
+      Strict-Transport-Security:
+      - max-age=2592000
+    body:
+      encoding: UTF-8
+      string: '{"like":{"topicId":5148,"id":46099,"postId":279093,"comment":"","account":{"name":"typetalk-rubygem-tester","updatedAt":"2014-05-15T00:36:03Z","fullName":"Rubygem
+        Tester","id":3865,"createdAt":"2014-05-14T09:09:44Z","suggestion":"Rubygem
+        Tester","imageUrl":"https://typetalk.in/accounts/3865/profile_image.png?t=1400114163838"}}}'
+    http_version: 
+  recorded_at: Thu, 15 May 2014 12:10:33 GMT
+- request:
+    method: post
+    uri: https://typetalk.in/api/v1/topics/5148/posts/279093/like?access_token=(ACCESS_TOKEN)
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Typetalk Rubygem 0.0.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 15 May 2014 12:10:34 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 15 May 2014 12:10:34 GMT
+recorded_with: VCR 2.9.0

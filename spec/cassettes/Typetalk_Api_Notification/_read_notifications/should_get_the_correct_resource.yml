@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://typetalk.in/oauth2/access_token
+    body:
+      encoding: UTF-8
+      string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&grant_type=client_credentials&scope=topic.read%2Ctopic.post%2Cmy
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Typetalk Rubygem 0.0.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 16 May 2014 10:59:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=2592000
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"(ACCESS_TOKEN)","expires_in":3600,"scope":"topic.read,topic.post,my","refresh_token":"(REFRESH_TOKEN)","token_type":"Bearer"}'
+    http_version: 
+  recorded_at: Fri, 16 May 2014 10:59:18 GMT
+- request:
+    method: put
+    uri: https://typetalk.in/api/v1/notifications/open?access_token=(ACCESS_TOKEN)
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Typetalk Rubygem 0.0.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 16 May 2014 10:59:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Etag:
+      - W/"1995446ae626c04ba0ff5107e10244de"
+      Strict-Transport-Security:
+      - max-age=2592000
+    body:
+      encoding: UTF-8
+      string: '{"access":{"unopened":0}}'
+    http_version: 
+  recorded_at: Fri, 16 May 2014 10:59:19 GMT
+recorded_with: VCR 2.9.0

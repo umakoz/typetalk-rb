@@ -212,4 +212,4 @@ It is usually not necessary if there is a configuration, because it automaticall
 
 ## Copyright
 
-Copyright (c) 2014- [Makoto Umami](mailto:umakoz@gmail.com). See [LICENSE]() for details.
+Copyright (c) 2014- [Makoto Umami](mailto:umakoz@gmail.com). See [LICENSE](LICENSE.txt) for details.

@@ -15,8 +15,14 @@ module Typetalk
 
 
     def access_token
-      @access_token ||= get_access_token
-      @access_token['access_token']
+      if @access_token.nil?
+        @access_token = get_access_token
+        @access_token.expire_time = Time.now.to_i + @access_token.expires_in.to_i
+      elsif Time.now.to_i >= @access_token.expire_time
+        @access_token = update_access_token(@access_token.refresh_token)
+        @access_token.expire_time = Time.now.to_i + @access_token.expires_in.to_i
+      end
+      @access_token.access_token
     end
 
 

@@ -55,6 +55,28 @@ describe Typetalk::Api::Auth do
 
 
 
+  describe '#update_access_token', :vcr do
+    it 'should get the correct resource by client_credentials' do
+      response = api.get_access_token
+
+      response = api.update_access_token(response.refresh_token)
+      expect(response).to be_a(Hashie::Mash)
+      expect(response.access_token).to eq('(ACCESS_TOKEN)')
+      expect(response.refresh_token).to eq('(REFRESH_TOKEN)')
+      expect(response.scope).to eq('topic.read,topic.post,my')
+      expect(response.token_type).to eq('Bearer')
+      expect(response.expires_in).to eq(3600)
+    end
+
+
+    it 'should raise error when refresh_token is wrong' do
+      response = api.get_access_token
+      expect{ api.update_access_token('dummy_token') }.to raise_error(Typetalk::InvalidRequest)
+    end
+  end
+
+
+
   describe '.authorize_url' do
     before do
       Typetalk.configure do |config|

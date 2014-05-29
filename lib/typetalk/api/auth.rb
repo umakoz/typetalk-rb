@@ -18,8 +18,24 @@ module Typetalk
         end
 
         response = connection.post do |req|
-         req.url 'https://typetalk.in/oauth2/access_token'
-         req.body = body
+          req.url 'https://typetalk.in/oauth2/access_token'
+          req.body = body
+        end
+        parse_response(response)
+      end
+
+
+      def update_access_token(refresh_token, client_id:nil, client_secret:nil)
+        body = {
+          client_id: client_id || Typetalk.config.client_id,
+          client_secret: client_secret || Typetalk.config.client_secret,
+          grant_type: 'refresh_token',
+          refresh_token: refresh_token
+        }
+
+        response = connection.post do |req|
+          req.url 'https://typetalk.in/oauth2/access_token'
+          req.body = body
         end
         parse_response(response)
       end

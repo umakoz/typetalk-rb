@@ -16,6 +16,7 @@ VCR.configure do |c|
   c.before_record do |i|
     i.request.body.sub!(/(&?client_id=)[^&]+/, '\1(CLIENT_ID)')
     i.request.body.sub!(/(&?client_secret=)[^&]+/, '\1(CLIENT_SECRET)')
+    i.request.body.sub!(/(&?refresh_token=)[^&]+/, '\1(REFRESH_TOKEN)')
     i.request.uri.sub!(/((\?|&)?access_token=)[^&]+/, '\1(ACCESS_TOKEN)')
 
     begin

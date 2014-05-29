@@ -1,6 +1,12 @@
-# Typetalk
+# Typetalk [![Build Status](https://secure.travis-ci.org/umakoz/typetalk.png)](http://travis-ci.org/umakoz/typetalk)
 
 A Ruby wrapper for [Typetalk API](http://developers.typetalk.in/api.html). The Typetalk gem provides an easy-to-use wrapper for Typetalk's REST APIs.
+
+## Requirements
+
+* Ruby 1.9.3 or higher
+* Typetalk account
+
 
 
 

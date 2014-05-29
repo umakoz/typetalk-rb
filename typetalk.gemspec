@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["umakoz@gmail.com"]
   spec.summary       = %q{A Ruby wrapper for Typetalk}
   spec.description   = %q{A Ruby wrapper for Typetalk}
-  spec.homepage      = "https://github.com/umakoz/typetalk"
+  spec.homepage      = "https://github.com/umakoz/typetalk-rb"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

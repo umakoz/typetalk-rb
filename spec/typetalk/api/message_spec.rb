@@ -33,8 +33,8 @@ describe Typetalk::Api::Message do
 
 
     it 'should get the correct resource for attachments' do
-      attachment1 = api.upload_attachment(topic_id, File.join(__dir__, '../../fixtures/attachments/logo_typetalk.jpg'))
-      attachment2 = api.upload_attachment(topic_id, File.join(__dir__, '../../fixtures/attachments/logo_cacoo.jpg'))
+      attachment1 = api.upload_attachment(topic_id, File.join(File.dirname(__FILE__), '../../fixtures/attachments/logo_typetalk.jpg'))
+      attachment2 = api.upload_attachment(topic_id, File.join(File.dirname(__FILE__), '../../fixtures/attachments/logo_cacoo.jpg'))
       response = api.post_message(topic_id, 'Test Message 2 - 4', file_keys:[attachment1.fileKey, attachment2.fileKey])
       expect(response).to be_a(Hashie::Mash)
       expect(response.post.message).to eq('Test Message 2 - 4')
@@ -71,7 +71,7 @@ describe Typetalk::Api::Message do
 
   describe '#upload_attachment', :vcr do
     it 'should get the correct resource' do
-      response = api.upload_attachment(topic_id, File.join(__dir__, '../../fixtures/attachments/logo_typetalk.jpg'))
+      response = api.upload_attachment(topic_id, File.join(File.dirname(__FILE__), '../../fixtures/attachments/logo_typetalk.jpg'))
       expect(response).to be_a(Hashie::Mash)
       expect(response.fileName).to eq('logo_typetalk.jpg')
       expect(response.fileSize).to eq(7622)
@@ -80,12 +80,12 @@ describe Typetalk::Api::Message do
 
 
     it 'should raise error when topic_id is wrong' do
-      expect{ api.upload_attachment('dummy', File.join(__dir__, '../../fixtures/attachments/logo_typetalk.jpg')) }.to raise_error(Typetalk::InvalidRequest)
+      expect{ api.upload_attachment('dummy', File.join(File.dirname(__FILE__), '../../fixtures/attachments/logo_typetalk.jpg')) }.to raise_error(Typetalk::InvalidRequest)
     end
 
 
     it 'should raise error when file size 10MB', vcr:false do
-      file = File.join(__dir__, '../../fixtures/attachments/10mb.txt')
+      file = File.join(File.dirname(__FILE__), '../../fixtures/attachments/10mb.txt')
       File.write(file, 'a' * (10485760 + 1))
       expect{ api.upload_attachment(topic_id, file) }.to raise_error(Typetalk::InvalidFileSize)
       File.unlink(file)

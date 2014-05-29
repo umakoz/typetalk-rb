@@ -5,7 +5,7 @@ module Typetalk
   class Api
     include Connection
 
-    Dir[File.join(__dir__, 'api/*.rb')].each{|f| require f}
+    Dir[File.join(File.dirname(__FILE__), 'api/*.rb')].each{|f| require f}
     include Auth
     include User
     include Topic

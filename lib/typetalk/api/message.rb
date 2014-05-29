@@ -5,74 +5,88 @@ module Typetalk
 
     module Message
 
-      def post_message(topic_id, message, token:nil, reply_to:nil, file_keys:nil, talk_ids:nil)
+      def post_message(topic_id, message, options={})
+        options = {token:nil, reply_to:nil, file_keys:nil, talk_ids:nil}.merge(options)
+
         response = connection.post do |req|
           req.url "#{endpoint}/topics/#{topic_id}"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
           body = {}
           body[:message] = message
-          body[:replyTo] = reply_to unless reply_to.nil?
-          body.merge! to_request_params('fileKeys', file_keys)
-          body.merge! to_request_params('talkIds', talk_ids)
+          body[:replyTo] = options[:reply_to] unless options[:reply_to].nil?
+          body.merge! to_request_params(:fileKeys, options[:file_keys])
+          body.merge! to_request_params(:talkIds, options[:talk_ids])
           req.body = body
         end
         parse_response(response)
       end
 
 
-      def upload_attachment(topic_id, file, token:nil)
+      def upload_attachment(topic_id, file, options={})
+        options = {token:nil}.merge(options)
+
         raise InvalidFileSize if File.size(file) > 10485760 # > 10MB
 
         response = connection(multipart:true).post do |req|
           req.url "#{endpoint}/topics/#{topic_id}/attachments"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
           req.body = { file: Faraday::UploadIO.new(file, MIME::Types.type_for(file).first.to_s) }
         end
         parse_response(response)
       end
 
 
-      def get_message(topic_id, post_id, token:nil)
+      def get_message(topic_id, post_id, options={})
+        options = {token:nil}.merge(options)
+
         response = connection.get do |req|
           req.url "#{endpoint}/topics/#{topic_id}/posts/#{post_id}"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
         end
         parse_response(response)
       end
 
 
-      def remove_message(topic_id, post_id, token:nil)
+      def remove_message(topic_id, post_id, options={})
+        options = {token:nil}.merge(options)
+
         response = connection.delete do |req|
           req.url "#{endpoint}/topics/#{topic_id}/posts/#{post_id}"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
         end
         parse_response(response)
         response.status == 200
       end
 
 
-      def like_message(topic_id, post_id, token:nil)
+      def like_message(topic_id, post_id, options={})
+        options = {token:nil}.merge(options)
+
         response = connection.post do |req|
           req.url "#{endpoint}/topics/#{topic_id}/posts/#{post_id}/like"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
         end
         parse_response(response)
       end
 
 
-      def unlike_message(topic_id, post_id, token:nil)
+      def unlike_message(topic_id, post_id, options={})
+        options = {token:nil}.merge(options)
+
         response = connection.delete do |req|
           req.url "#{endpoint}/topics/#{topic_id}/posts/#{post_id}/like"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
         end
         parse_response(response)
       end
 
 
-      def read_message(topic_id, post_id=nil, token:nil)
+      def read_message(topic_id, post_id=nil, options={})
+        options = {token:nil}.merge(options)
+
         response = connection.post do |req|
           req.url "#{endpoint}/bookmark/save"
-          req.params[:access_token] = token || access_token
+          req.params[:access_token] = options[:token] || access_token
           body = {}
           body[:topicId] = topic_id
           body[:postId] = post_id unless post_id.nil?

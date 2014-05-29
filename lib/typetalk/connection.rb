@@ -16,9 +16,11 @@ module Typetalk
       }
     end
 
-    def connection(multipart:false)
+    def connection(options={})
+      options = {multipart:nil}.merge(options)
+
       Faraday.new(connection_options) do |conn|
-        conn.request :multipart if multipart
+        conn.request :multipart if options[:multipart]
         conn.use Faraday::Request::UrlEncoded
         conn.use Faraday::Adapter::NetHttp
         # conn.use Faraday::Response::ParseJson

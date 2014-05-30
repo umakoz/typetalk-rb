@@ -15,6 +15,7 @@ module Typetalk
     scope: 'topic.read,topic.post,my',
     endpoint: 'https://typetalk.in/api/v1',
     proxy: nil,
+    user_agent: "Typetalk Rubygem #{Typetalk::VERSION}",
   }
 
   class << self

@@ -42,6 +42,7 @@ You need to provide your Client ID and Client Secret.
       config.grant_type = 'client_credentials' # or 'authorization_code'
       config.redirect_uri = '...' # for authorization code
       config.proxy = '...'
+      config.user_agent = '...'
     end
 
 You can also specify these values via ENV:

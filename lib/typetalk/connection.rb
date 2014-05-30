@@ -11,7 +11,7 @@ module Typetalk
 
     def connection_options
       {
-        :headers => {'Accept' => 'application/json; charset=utf-8', 'User-Agent' => "Typetalk Rubygem #{Typetalk::VERSION}"},
+        :headers => {'Accept' => 'application/json; charset=utf-8', 'User-Agent' => Typetalk.config.user_agent},
         :proxy => Typetalk.config.proxy,
       }
     end

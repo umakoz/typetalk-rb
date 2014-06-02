@@ -49,7 +49,7 @@ module Typetalk
     end
 
     def response_values(response)
-      {status: response.status, headers: response.headers, body: response.body}
+      {status: response.status, headers: response.headers, body: response.body}.to_json
     end
 
   end

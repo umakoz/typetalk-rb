@@ -28,11 +28,6 @@ module Typetalk
 
     protected
     def parse_response(response)
-
-      # TODO remove debug print
-      #require 'awesome_print'
-      #ap response
-
       case response.status
       when 400
         raise InvalidRequest, response_values(response)

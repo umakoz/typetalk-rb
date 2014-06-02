@@ -15,12 +15,12 @@ describe Typetalk::Api::User do
 
     it 'should raise error when access_token is wrong' do
       api.get_access_token
-      expect{ api.get_profile(token: '(WRONG_ACCESS_TOKEN)') }.to raise_error(Typetalk::InvalidRequest)
+      expect{ api.get_profile(token: '(WRONG_ACCESS_TOKEN)') }.to raise_error(Typetalk::Unauthorized)
     end
 
     it 'should raise error when scope is wrong' do
       r = api.get_access_token(scope: 'topic.read,topic.post')
-      expect{ api.get_profile(token: r.access_token) }.to raise_error(Typetalk::InvalidRequest)
+      expect{ api.get_profile(token: r.access_token) }.to raise_error(Typetalk::Unauthorized)
     end
   end
 

@@ -34,8 +34,10 @@ module Typetalk
       #ap response
 
       case response.status
-      when 400, 401
+      when 400
         raise InvalidRequest, response_values(response)
+      when 401
+        raise Unauthorized, response_values(response)
       when 404
         raise NotFound, response_values(response)
       when 413

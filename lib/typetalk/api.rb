@@ -1,4 +1,5 @@
 require 'typetalk/connection'
+require 'json'
 
 module Typetalk
 

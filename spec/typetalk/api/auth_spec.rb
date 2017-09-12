@@ -91,7 +91,7 @@ describe Typetalk::Api::Auth do
       url = URI.parse(Typetalk::Api::Auth.authorize_url)
       query = Hash[URI.decode_www_form(url.query)]
       expect(url.scheme).to eq('https')
-      expect(url.host).to eq('typetalk.in')
+      expect(url.host).to eq('typetalk.com')
       expect(url.path).to eq('/oauth2/authorize')
       expect(query['client_id']).to eq('dummy_id')
       expect(query['redirect_uri']).to eq('http://dummy/')

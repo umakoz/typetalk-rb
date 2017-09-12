@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://typetalk.in/oauth2/access_token
+    uri: https://typetalk.com/oauth2/access_token
     body:
       encoding: UTF-8
       string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&grant_type=client_credentials&scope=topic.read%2Ctopic.post%2Cmy
@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Fri, 16 May 2014 11:10:49 GMT
 - request:
     method: post
-    uri: https://typetalk.in/api/v1/teams/1038/members/invite/2052/accept?access_token=(ACCESS_TOKEN)
+    uri: https://typetalk.com/api/v1/teams/1038/members/invite/2052/accept?access_token=(ACCESS_TOKEN)
     body:
       encoding: UTF-8
       string: ''
@@ -77,15 +77,15 @@ http_interactions:
       encoding: UTF-8
       string: '{"topics":[{"name":"Test Team 3","updatedAt":"2014-05-16T10:32:25Z","description":null,"id":5168,"lastPostedAt":null,"createdAt":"2014-05-16T10:32:25Z","suggestion":"Test
         Team 3"}],"invite":{"updatedAt":"2014-05-16T11:10:46Z","role":"member","id":2052,"team":{"name":"Test
-        Team 3","updatedAt":"2014-05-16T10:32:25Z","description":null,"id":1038,"createdAt":"2014-05-16T10:32:25Z","imageUrl":"https://typetalk.in/teams/1038/image.png?t=1400236345575"},"createdAt":"2014-05-16T10:32:25Z","sender":{"name":"umakoz","updatedAt":"2014-05-16T09:59:47Z","fullName":"umakoz","id":921,"createdAt":"2013-12-09T23:47:12Z","suggestion":"umakoz","imageUrl":"https://typetalk.in/accounts/921/profile_image.png?t=1400234387555"},"message":"Test
+        Team 3","updatedAt":"2014-05-16T10:32:25Z","description":null,"id":1038,"createdAt":"2014-05-16T10:32:25Z","imageUrl":"https://typetalk.com/teams/1038/image.png?t=1400236345575"},"createdAt":"2014-05-16T10:32:25Z","sender":{"name":"umakoz","updatedAt":"2014-05-16T09:59:47Z","fullName":"umakoz","id":921,"createdAt":"2013-12-09T23:47:12Z","suggestion":"umakoz","imageUrl":"https://typetalk.com/accounts/921/profile_image.png?t=1400234387555"},"message":"Test
         Team Invitation 3","account":{"name":"typetalk-rubygem-tester","updatedAt":"2014-05-16T08:58:31Z","fullName":"Rubygem
         Tester","id":3865,"createdAt":"2014-05-14T09:09:44Z","suggestion":"Rubygem
-        Tester","imageUrl":"https://typetalk.in/accounts/3865/profile_image.png?t=1400230711958"}}}'
+        Tester","imageUrl":"https://typetalk.com/accounts/3865/profile_image.png?t=1400230711958"}}}'
     http_version: 
   recorded_at: Fri, 16 May 2014 11:10:49 GMT
 - request:
     method: post
-    uri: https://typetalk.in/api/v1/teams/1038/members/invite/2052/accept?access_token=(ACCESS_TOKEN)
+    uri: https://typetalk.com/api/v1/teams/1038/members/invite/2052/accept?access_token=(ACCESS_TOKEN)
     body:
       encoding: UTF-8
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://typetalk.in/oauth2/access_token
+    uri: https://typetalk.com/oauth2/access_token
     body:
       encoding: UTF-8
       string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&grant_type=client_credentials&scope=topic.read%2Ctopic.post%2Cmy
@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Thu, 15 May 2014 10:18:23 GMT
 - request:
     method: get
-    uri: https://typetalk.in/api/v1/topics/5149?access_token=(ACCESS_TOKEN)&count=2&direction=forward&from=278765
+    uri: https://typetalk.com/api/v1/topics/5149?access_token=(ACCESS_TOKEN)&count=2&direction=forward&from=278765
     body:
       encoding: US-ASCII
       string: ''
@@ -74,9 +74,9 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"posts":[{"updatedAt":"2014-05-15T09:10:57Z","talks":[{"name":"Test
-        Summary 3 - 1","updatedAt":"2014-05-15T09:44:38Z","url":"https://typetalk.in/topics/5149/talks/3991","description":null,"topicId":5149,"id":3991,"createdAt":"2014-05-15T09:44:38Z"}],"replyTo":null,"url":"https://typetalk.in/topics/5149/posts/278766","topicId":5149,"likes":[],"links":[],"id":278766,"mention":null,"createdAt":"2014-05-15T09:10:57Z","message":"Test
-        Message 3 - 3","account":{"name":"umakoz","updatedAt":"2014-05-15T00:44:58Z","fullName":"umakoz","id":921,"createdAt":"2013-12-09T23:47:12Z","suggestion":"umakoz","imageUrl":"https://typetalk.in/accounts/921/profile_image.png?t=1400114698595"},"attachments":[]},{"updatedAt":"2014-05-15T09:16:09Z","talks":[],"replyTo":278693,"url":"https://typetalk.in/topics/5149/posts/278779","topicId":5149,"likes":[],"links":[],"id":278779,"mention":null,"createdAt":"2014-05-15T09:16:09Z","message":"Test
-        Message 3 - 4","account":{"name":"umakoz","updatedAt":"2014-05-15T00:44:58Z","fullName":"umakoz","id":921,"createdAt":"2013-12-09T23:47:12Z","suggestion":"umakoz","imageUrl":"https://typetalk.in/accounts/921/profile_image.png?t=1400114698595"},"attachments":[]}],"team":null,"topic":{"name":"Test
+        Summary 3 - 1","updatedAt":"2014-05-15T09:44:38Z","url":"https://typetalk.com/topics/5149/talks/3991","description":null,"topicId":5149,"id":3991,"createdAt":"2014-05-15T09:44:38Z"}],"replyTo":null,"url":"https://typetalk.com/topics/5149/posts/278766","topicId":5149,"likes":[],"links":[],"id":278766,"mention":null,"createdAt":"2014-05-15T09:10:57Z","message":"Test
+        Message 3 - 3","account":{"name":"umakoz","updatedAt":"2014-05-15T00:44:58Z","fullName":"umakoz","id":921,"createdAt":"2013-12-09T23:47:12Z","suggestion":"umakoz","imageUrl":"https://typetalk.com/accounts/921/profile_image.png?t=1400114698595"},"attachments":[]},{"updatedAt":"2014-05-15T09:16:09Z","talks":[],"replyTo":278693,"url":"https://typetalk.com/topics/5149/posts/278779","topicId":5149,"likes":[],"links":[],"id":278779,"mention":null,"createdAt":"2014-05-15T09:16:09Z","message":"Test
+        Message 3 - 4","account":{"name":"umakoz","updatedAt":"2014-05-15T00:44:58Z","fullName":"umakoz","id":921,"createdAt":"2013-12-09T23:47:12Z","suggestion":"umakoz","imageUrl":"https://typetalk.com/accounts/921/profile_image.png?t=1400114698595"},"attachments":[]}],"team":null,"topic":{"name":"Test
         Topic 3","updatedAt":"2014-05-15T07:51:09Z","description":null,"id":5149,"lastPostedAt":"2014-05-15T09:58:01Z","createdAt":"2014-05-15T07:51:09Z","suggestion":"Test
         Topic 3"},"bookmark":{"postId":278693,"updatedAt":"2014-05-15T09:09:42Z"},"hasNext":true}'
     http_version: 

@@ -13,7 +13,7 @@ module Typetalk
     redirect_uri: nil,
     grant_type: 'client_credentials', # or 'authorization_code'
     scope: 'topic.read,topic.post,my',
-    endpoint: 'https://typetalk.in/api/v1',
+    endpoint: 'https://typetalk.com/api/v1',
     proxy: nil,
     user_agent: "Typetalk Rubygem #{Typetalk::VERSION}",
   }

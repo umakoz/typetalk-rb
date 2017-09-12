@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://typetalk.in/oauth2/access_token
+    uri: https://typetalk.com/oauth2/access_token
     body:
       encoding: UTF-8
       string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&grant_type=client_credentials&scope=topic.read%2Ctopic.post%2Cmy
@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Thu, 15 May 2014 11:33:06 GMT
 - request:
     method: post
-    uri: https://typetalk.in/api/v1/topics/5148/attachments?access_token=(ACCESS_TOKEN)
+    uri: https://typetalk.com/api/v1/topics/5148/attachments?access_token=(ACCESS_TOKEN)
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -257,7 +257,7 @@ http_interactions:
   recorded_at: Thu, 15 May 2014 11:33:07 GMT
 - request:
     method: post
-    uri: https://typetalk.in/api/v1/topics/5148/attachments?access_token=(ACCESS_TOKEN)
+    uri: https://typetalk.com/api/v1/topics/5148/attachments?access_token=(ACCESS_TOKEN)
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -490,7 +490,7 @@ http_interactions:
   recorded_at: Thu, 15 May 2014 11:33:08 GMT
 - request:
     method: post
-    uri: https://typetalk.in/api/v1/topics/5148?access_token=(ACCESS_TOKEN)
+    uri: https://typetalk.com/api/v1/topics/5148?access_token=(ACCESS_TOKEN)
     body:
       encoding: UTF-8
       string: fileKeys%5B0%5D=4e235d4e09375c6bd430edf67a199060c1f01eb3&fileKeys%5B1%5D=2fd98b571e294be79302d00ccac13c87d761f7df&message=Test+Message+2+-+4
@@ -527,10 +527,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"topic":{"name":"Test Topic 2","updatedAt":"2014-05-15T07:49:56Z","description":null,"id":5148,"lastPostedAt":"2014-05-15T11:33:09Z","createdAt":"2014-05-15T07:45:57Z","suggestion":"Test
-        Topic 2"},"post":{"updatedAt":"2014-05-15T11:33:09Z","talks":[],"replyTo":null,"url":"https://typetalk.in/topics/5148/posts/279049","topicId":5148,"likes":[],"links":[],"id":279049,"mention":null,"createdAt":"2014-05-15T11:33:09Z","message":"Test
+        Topic 2"},"post":{"updatedAt":"2014-05-15T11:33:09Z","talks":[],"replyTo":null,"url":"https://typetalk.com/topics/5148/posts/279049","topicId":5148,"likes":[],"links":[],"id":279049,"mention":null,"createdAt":"2014-05-15T11:33:09Z","message":"Test
         Message 2 - 4","account":{"name":"typetalk-rubygem-tester","updatedAt":"2014-05-15T00:36:03Z","fullName":"Rubygem
         Tester","id":3865,"createdAt":"2014-05-14T09:09:44Z","suggestion":"Rubygem
-        Tester","imageUrl":"https://typetalk.in/accounts/3865/profile_image.png?t=1400114163838"},"attachments":[{"fileName":"logo_typetalk.jpg","webUrl":"https://typetalk.in/topics/5148/posts/279049/attachments/1/logo_typetalk.jpg","apiUrl":"https://typetalk.in/api/v1/topics/5148/posts/279049/attachments/1/logo_typetalk.jpg"},{"fileName":"logo_cacoo.jpg","webUrl":"https://typetalk.in/topics/5148/posts/279049/attachments/2/logo_cacoo.jpg","apiUrl":"https://typetalk.in/api/v1/topics/5148/posts/279049/attachments/2/logo_cacoo.jpg"}]}}'
+        Tester","imageUrl":"https://typetalk.com/accounts/3865/profile_image.png?t=1400114163838"},"attachments":[{"fileName":"logo_typetalk.jpg","webUrl":"https://typetalk.com/topics/5148/posts/279049/attachments/1/logo_typetalk.jpg","apiUrl":"https://typetalk.com/api/v1/topics/5148/posts/279049/attachments/1/logo_typetalk.jpg"},{"fileName":"logo_cacoo.jpg","webUrl":"https://typetalk.com/topics/5148/posts/279049/attachments/2/logo_cacoo.jpg","apiUrl":"https://typetalk.com/api/v1/topics/5148/posts/279049/attachments/2/logo_cacoo.jpg"}]}}'
     http_version: 
   recorded_at: Thu, 15 May 2014 11:33:09 GMT
 recorded_with: VCR 2.9.0

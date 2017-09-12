@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://typetalk.in/oauth2/access_token
+    uri: https://typetalk.com/oauth2/access_token
     body:
       encoding: UTF-8
       string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&grant_type=client_credentials&scope=topic.read%2Ctopic.post%2Cmy
@@ -39,7 +39,7 @@ http_interactions:
   recorded_at: Thu, 15 May 2014 10:26:16 GMT
 - request:
     method: get
-    uri: https://typetalk.in/api/v1/topics/dummy/members/status?access_token=(ACCESS_TOKEN)
+    uri: https://typetalk.com/api/v1/topics/dummy/members/status?access_token=(ACCESS_TOKEN)
     body:
       encoding: US-ASCII
       string: ''

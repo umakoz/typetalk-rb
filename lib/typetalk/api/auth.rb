@@ -20,7 +20,7 @@ module Typetalk
         end
 
         response = connection.post do |req|
-          req.url 'https://typetalk.in/oauth2/access_token'
+          req.url 'https://typetalk.com/oauth2/access_token'
           req.body = body
         end
         parse_response(response)
@@ -38,7 +38,7 @@ module Typetalk
         }
 
         response = connection.post do |req|
-          req.url 'https://typetalk.in/oauth2/access_token'
+          req.url 'https://typetalk.com/oauth2/access_token'
           req.body = body
         end
         parse_response(response)
@@ -54,7 +54,7 @@ module Typetalk
           scope: options[:scope] || Typetalk.config.scope,
           response_type: 'code',
         }
-        url = URI.parse('https://typetalk.in/oauth2/authorize')
+        url = URI.parse('https://typetalk.com/oauth2/authorize')
         url.query = URI.encode_www_form(params)
         url.to_s
       end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://typetalk.in/oauth2/access_token
+    uri: https://typetalk.com/oauth2/access_token
     body:
       encoding: UTF-8
       string: client_id=(CLIENT_ID)&client_secret=(CLIENT_SECRET)&code=(AUTHORIZATION_CODE)&grant_type=authorization_code&redirect_uri=http%3A%2F%2Fdummy_mismatch%2F&scope=topic.read%2Ctopic.post%2Cmy

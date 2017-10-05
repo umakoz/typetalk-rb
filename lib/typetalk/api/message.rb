@@ -6,7 +6,7 @@ module Typetalk
     module Message
 
       def post_message(topic_id, message, options={})
-        options = {token:nil, reply_to:nil, file_keys:nil, talk_ids:nil}.merge(options)
+        options = {token:nil, reply_to:nil, show_link_meta:nil, file_keys:nil, talk_ids:nil}.merge(options)
 
         response = connection.post do |req|
           req.url "#{endpoint}/topics/#{topic_id}"
